@@ -44,7 +44,8 @@ public class JacobiRotationTest {
     @ParameterizedTest
     @MethodSource("calculateTestParameters")
     public <T extends Matrix<T>> void calculateTest(T matrix, Vector eigenValues, double epsilon) {
-        var calculatedEigenValues = JacobiRotation.calculate(matrix, epsilon);
+        var result = JacobiRotation.calculate(matrix, epsilon);
+        var calculatedEigenValues = result.eigenValues();
         for (int i = 0; i < eigenValues.size(); i++) {
             Assertions.assertTrue(Math.abs(eigenValues.get(i) - calculatedEigenValues.get(i)) < epsilon,
                     String.format("Expected %f, got %f", eigenValues.get(i), calculatedEigenValues.get(i)));

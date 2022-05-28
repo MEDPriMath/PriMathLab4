@@ -39,6 +39,22 @@ public class ArrayMatrix extends Matrix<ArrayMatrix> {
     }
 
     @Override
+    public ArrayMatrix sum(ArrayMatrix other) {
+        if (rows != other.rows || columns != other.columns)
+            throw new IllegalArgumentException();
+
+        double[][] resultData = new double[rows][columns];
+
+        for (int row = 0; row < rows; ++row) {
+            for (int column = 0; column < columns; ++column) {
+                resultData[row][column] = data[row][column] + other.data[row][column];
+            }
+        }
+
+        return new ArrayMatrix(resultData);
+    }
+
+    @Override
     public ArrayMatrix multiply(ArrayMatrix other) {
         if (columns != other.rows)
             throw new IllegalArgumentException();
@@ -56,6 +72,29 @@ public class ArrayMatrix extends Matrix<ArrayMatrix> {
         }
 
         return new ArrayMatrix(resultData);
+    }
+
+    @Override
+    public ArrayMatrix multiply(double scalar) {
+        double[][] resultData = new double[rows][columns];
+
+        for (int row = 0; row < rows; ++row) {
+            for (int column = 0; column < columns; ++column) {
+                resultData[row][column] = data[row][column] * scalar;
+            }
+        }
+
+        return new ArrayMatrix(resultData);
+    }
+
+    @Override
+    public ArrayMatrix clone() {
+        double[][] newData = new double[rows][columns];
+        for (int i = 0; i < rows; ++i){
+            System.arraycopy(data[i], 0, newData[i], 0, columns);
+        }
+
+        return new ArrayMatrix(newData);
     }
 
     public ArrayMatrix(double[][] data) {

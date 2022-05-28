@@ -244,6 +244,34 @@ public class CSRMatrix extends Matrix<CSRMatrix> {
     }
 
     @Override
+    public CSRMatrix sum(CSRMatrix other) {
+        if (rows != other.rows || columns != other.columns)
+            throw new IllegalArgumentException();
+
+        int newRows = rows;
+        int newColumns = columns;
+
+        var newData = new ArrayList<Double>();
+        var newIndices = new ArrayList<Integer>();
+        var newElementsBeforeRow = new int[newColumns + 1];
+
+        int counter = 0;
+        for (int row = 0; row < rows; row++) {
+            for (int column = 0; column < columns; column++) {
+                double value = get(row, column) + other.get(row, column);
+                if (abs(value) > epsilon) {
+                    newData.add(value);
+                    newIndices.add(column);
+                    counter++;
+                }
+            }
+            newElementsBeforeRow[row + 1] = counter;
+        }
+
+        return new CSRMatrix(newRows, newColumns, newData, newIndices, newElementsBeforeRow);
+    }
+
+    @Override
     public CSRMatrix multiply(CSRMatrix other) {
         if (columns != other.rows)
             throw new IllegalArgumentException();
@@ -273,6 +301,29 @@ public class CSRMatrix extends Matrix<CSRMatrix> {
         }
 
         return new CSRMatrix(newRows, newColumns, newData, newIndices, newElementsBeforeRow);
+    }
+
+    @Override
+    public CSRMatrix multiply(double scalar) {
+        if (abs(scalar) < epsilon) {
+            return new CSRMatrix(rows, columns);
+        }
+
+        List<Double> newData = new ArrayList<>(data.size());
+        List<Integer> newIndices = new ArrayList<>();
+        int[] newElementsBeforeRow = new int[rows + 1];
+        System.arraycopy(elementsBeforeRow, 0, newElementsBeforeRow, 0, rows + 1);
+
+        for (Double value : data) {
+            newData.add(value * scalar);
+        }
+
+        return new CSRMatrix(rows, columns, newData, newIndices, newElementsBeforeRow);
+    }
+
+    @Override
+    public CSRMatrix clone() {
+        return this.multiply(1);
     }
 
     @Override
