@@ -28,7 +28,7 @@ public class JacobiRotationChecker implements MatrixAlgorithmChecker{
     public void check() {
         markdownBlocks.add(new MarkdownHeader("Check Jacobi rotation method", 1, true));
         markdownBlocks.add(new MarkdownQuote(DescriptionStorage.jacobiRotation));
-        markdownBlocks.add(new MarkdownBold("Precision: " + precision, true));
+        markdownBlocks.add(new MarkdownBold("Precision: " + String.format("%f", precision), true));
 
         matrixGenerators.forEach(matrixGenerator -> {
             Matrix generatedMatrix = matrixGenerator.generate(matrixSize);

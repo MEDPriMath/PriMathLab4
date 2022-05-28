@@ -15,7 +15,7 @@ public class Main {
     /**
      *  В ЭТОЙ ЛАБОРАТОРНОЙ РАБОТЕ МАТРИЦУ ДОЛЖНЫ БЫТЬ СИММЕТРИЧНЫ
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         var matrix = new DiagonallyDominantArrayMatrixGenerator(5).generate(50);
         JacobiRotation.calculate(matrix, 1E-2);
 
@@ -27,5 +27,14 @@ public class Main {
 
         MarkdownDocument markdownDocument = new MarkdownDocument(jacobiRotationChecker.getMarkdownBlocks());
         markdownDocument.toMarkdownFile("report.md");
+
+//        MarkdownDocument.toHTML("report.md", "..\\ReportLab4\\index.html");
+
+//        commitAndPush();
+    }
+
+    private static int commitAndPush() throws Exception {
+        Process p = Runtime.getRuntime().exec("..\\ReportLab4\\pushScript.cmd");
+        return p.waitFor();
     }
 }
