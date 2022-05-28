@@ -17,6 +17,7 @@ public abstract class Matrix<T extends Matrix<T>> {
     public abstract T sum(T other);
     public abstract T multiply(T other);
     public abstract T multiply(double scalar);
+    public abstract T clone();
 
     public T difference(T other) {
         return sum(other.multiply(-1));

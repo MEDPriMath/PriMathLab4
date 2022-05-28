@@ -4,6 +4,7 @@ import ru.itmo.checkers.JacobiRotationChecker;
 import ru.itmo.markdown.MarkdownDocument;
 import ru.itmo.primath.algo.JacobiRotation;
 import ru.itmo.primath.generator.DiagonallyDominantArrayMatrixGenerator;
+import ru.itmo.primath.generator.HilbertArrayMatrixGenerator;
 import ru.itmo.primath.generator.SymmetryMatrixGenerator;
 
 import java.io.IOException;
@@ -20,7 +21,9 @@ public class Main {
         JacobiRotation.calculate(matrix, 1E-2);
 
         List<SymmetryMatrixGenerator> symmetryMatrixGenerators = new ArrayList<>();
-        symmetryMatrixGenerators.add(new DiagonallyDominantArrayMatrixGenerator(1));
+        for (int k = 0; k < 5; ++k)
+            symmetryMatrixGenerators.add(new DiagonallyDominantArrayMatrixGenerator(k));
+        symmetryMatrixGenerators.add(new HilbertArrayMatrixGenerator());
 
         JacobiRotationChecker jacobiRotationChecker = new JacobiRotationChecker(symmetryMatrixGenerators, 1E-5, 10);
         jacobiRotationChecker.check();
