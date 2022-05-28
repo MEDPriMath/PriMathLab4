@@ -34,7 +34,7 @@ public class JacobiRotation {
             eigenValues.set(i, matrix.get(i, i));
         }
 
-        return new JacobiRotationResult(eigenVectors.get(), eigenValues);
+        return new JacobiRotationResult<>(eigenVectors.get(), eigenValues);
     }
 
     /**
