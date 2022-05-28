@@ -13,7 +13,9 @@ public abstract class Matrix<T extends Matrix<T>> {
     public abstract T createIdentity(int size);
 
     public abstract double get(int row, int column);
+
     public abstract void set(int row, int column, double value);
+
     public abstract T multiply(T other);
 
     public void print() {
@@ -37,6 +39,17 @@ public abstract class Matrix<T extends Matrix<T>> {
         }
     }
 
+    public boolean equals(T other, double epsilon) {
+        for (int row = 0; row < rows; row++) {
+            for (int column = 0; column < columns; column++) {
+                if (Math.abs(get(row, column) - other.get(row, column)) > epsilon) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
 //    public void print() {
 //        print(1);
 //    }
@@ -57,4 +70,4 @@ public abstract class Matrix<T extends Matrix<T>> {
 //            System.out.println();
 //        }
 //    }
-}
+    }
