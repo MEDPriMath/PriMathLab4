@@ -2,7 +2,7 @@ package ru.itmo.primath.generator;
 
 import ru.itmo.primath.matrix.ArrayMatrix;
 
-public class HilbertArrayMatrixGenerator implements MatrixGenerator<ArrayMatrix> {
+public class HilbertArrayMatrixGenerator implements SymmetryMatrixGenerator<ArrayMatrix> {
 
     @Override
     public ArrayMatrix generate(int size) {

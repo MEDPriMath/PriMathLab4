@@ -24,6 +24,10 @@ public class ArrayMatrix extends Matrix<ArrayMatrix> {
         return new ArrayMatrix(data);
     }
 
+    public double[][] getData() {
+        return data;
+    }
+
     @Override
     public double get(int row, int column) {
         return data[row][column];
