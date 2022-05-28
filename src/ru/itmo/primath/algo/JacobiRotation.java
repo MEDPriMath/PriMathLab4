@@ -46,7 +46,8 @@ public class JacobiRotation {
         double sum = 0;
         for (int row = 0; row < matrix.rows; row++) {
             for (int column = row + 1; column < matrix.columns; column++) {
-                var value = abs(matrix.get(row, column));
+                var realValue = matrix.get(row, column);
+                var value = abs(realValue);
 
                 if (maxValue < value) {
                     maxValue = value;
@@ -54,7 +55,7 @@ public class JacobiRotation {
                     maxColumn = column;
                 }
 
-                sum += Math.pow(matrix.get(row, column), 2);
+                sum += Math.pow(realValue, 2);
             }
         }
 

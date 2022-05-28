@@ -58,6 +58,19 @@ public class ArrayMatrix extends Matrix<ArrayMatrix> {
         return new ArrayMatrix(resultData);
     }
 
+    @Override
+    public ArrayMatrix multiply(double scalar) {
+        double[][] resultData = new double[rows][columns];
+
+        for (int row = 0; row < rows; ++row) {
+            for (int column = 0; column < columns; ++column) {
+                resultData[row][column] = data[row][column] * scalar;
+            }
+        }
+
+        return new ArrayMatrix(resultData);
+    }
+
     public ArrayMatrix(double[][] data) {
         super(data.length, data[0].length);
         this.data = data;

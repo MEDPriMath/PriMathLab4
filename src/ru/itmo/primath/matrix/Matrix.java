@@ -15,6 +15,7 @@ public abstract class Matrix<T extends Matrix<T>> {
     public abstract double get(int row, int column);
     public abstract void set(int row, int column, double value);
     public abstract T multiply(T other);
+    public abstract T multiply(double scalar);
 
     public void print() {
         print(2);

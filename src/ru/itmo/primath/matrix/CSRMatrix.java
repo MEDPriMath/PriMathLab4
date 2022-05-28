@@ -276,6 +276,24 @@ public class CSRMatrix extends Matrix<CSRMatrix> {
     }
 
     @Override
+    public CSRMatrix multiply(double scalar) {
+        if (abs(scalar) < epsilon) {
+            return new CSRMatrix(rows, columns);
+        }
+
+        List<Double> newData = new ArrayList<>(data.size());
+        List<Integer> newIndices = new ArrayList<>();
+        int[] newElementsBeforeRow = new int[rows + 1];
+        System.arraycopy(elementsBeforeRow, 0, newElementsBeforeRow, 0, rows + 1);
+
+        for (Double value : data) {
+            newData.add(value * scalar);
+        }
+
+        return new CSRMatrix(rows, columns, newData, newIndices, newElementsBeforeRow);
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
