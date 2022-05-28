@@ -87,6 +87,16 @@ public class ArrayMatrix extends Matrix<ArrayMatrix> {
         return new ArrayMatrix(resultData);
     }
 
+    @Override
+    public ArrayMatrix clone() {
+        double[][] newData = new double[rows][columns];
+        for (int i = 0; i < rows; ++i){
+            System.arraycopy(data[i], 0, newData[i], 0, columns);
+        }
+
+        return new ArrayMatrix(newData);
+    }
+
     public ArrayMatrix(double[][] data) {
         super(data.length, data[0].length);
         this.data = data;
