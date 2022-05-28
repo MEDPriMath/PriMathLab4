@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b8cf8f8c-e0a2-4034-999c-3f8cfa4ba780" name="Changes" comment="feat: initial JacobiRotation implementation&#10;refactor: Matrix, ArrayMatrix and CSRMatrix are reworked&#10;test: added tests for JacobiRotation and matrices">
-      <change afterPath="$PROJECT_DIR$/src/ru/itmo/primath/generator/DiagonallyDominantArrayMatrixGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ru/itmo/primath/generator/RandomCSRMatrixGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/itmo/checkers/JacobiRotationChecker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/itmo/checkers/MatrixAlgorithmChecker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/itmo/markdown/MarkdownDocument.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/itmo/markdown/blocks/MarkdownBlock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/itmo/markdown/blocks/MarkdownBold.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/itmo/markdown/blocks/MarkdownHeader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/itmo/markdown/blocks/MarkdownQuote.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/itmo/markdown/blocks/MarkdownTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/itmo/markdown/blocks/MarkdownText.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/itmo/markdown/description/DescriptionStorage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PriMath lab-4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PriMath lab-4.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/itmo/primath/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/itmo/primath/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/itmo/primath/generator/HilbertArrayMatrixGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/itmo/primath/generator/HilbertArrayMatrixGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/itmo/primath/generator/MatrixGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/itmo/primath/generator/SymmetryMatrixGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/itmo/primath/matrix/ArrayMatrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/itmo/primath/matrix/ArrayMatrix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/itmo/primath/vector/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/itmo/primath/vector/Vector.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +31,9 @@
     <option name="groupingKeys">
       <option value="directory" />
     </option>
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -33,6 +48,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
   <component name="ProjectId" id="29lIrU345Ui489RXBasw6wigTs5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -42,11 +60,19 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Workspace/University/Semester 4/PriMath/PriMathLab4/src/ru/itmo/primath/lab4/gendata",
+    "last_opened_file_path": "D:/Primat/PriMathLab4/src/ru/itmo",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.17",
     "project.structure.side.proportion": "0.2",
@@ -55,6 +81,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Primat\PriMathLab4\src\ru\itmo" />
       <recent name="C:\Workspace\University\Semester 4\PriMath\PriMathLab4\src\ru\itmo\primath\lab4\gendata" />
       <recent name="C:\Workspace\University\Semester 4\PriMath\PriMathLab4\src\ru\itmo\primath\lab4\matrix" />
     </key>
@@ -65,6 +92,7 @@
       <recent name="ru.itmo.primath" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.itmo.checkers" />
       <recent name="ru.itmo.primath.matrix" />
     </key>
   </component>
@@ -145,19 +173,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="PriMath lab-4" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="PriMath lab-4" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -177,6 +192,7 @@
       <option name="presentableId" value="Default" />
       <updated>1653681445817</updated>
       <workItem from="1653681448248" duration="19792000" />
+      <workItem from="1653721514213" duration="2261000" />
     </task>
     <task id="LOCAL-00001" summary="feat: initial commit">
       <created>1653681655933</created>

@@ -1,5 +1,7 @@
 package ru.itmo.primath.vector;
 
+import java.util.Arrays;
+
 public class Vector {
     private final double[] data;
 
@@ -21,5 +23,10 @@ public class Vector {
 
     public int size() {
         return data.length;
+    }
+
+    @Override
+    public String toString() {
+        return Arrays.toString(data);
     }
 }
